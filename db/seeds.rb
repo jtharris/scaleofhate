@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+dummy_list = List.create({name: 'foods', items: ['milk', 'mayonaise', 'figs', 'anything with some kind of white sauce', 'greens']})
