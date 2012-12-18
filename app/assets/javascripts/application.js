@@ -1,2 +1,5 @@
+//= require jquery
+//= require handlebars
 //= require ember
-//= require ember/app
+
+//= require ./scaleofhate
