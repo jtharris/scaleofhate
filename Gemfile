@@ -3,10 +3,15 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.2'
 
 gem 'rails-api'
-gem 'angular-rails'
-gem 'therubyracer'
-gem 'uglifier'
 gem 'mongoid'
+
+group :assets do
+  gem 'angular-rails'
+  gem 'therubyracer'
+  gem 'uglifier'
+
+  gem 'twitter-bootstrap-rails'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

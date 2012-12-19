@@ -8,7 +8,6 @@ class ListsController < ApplicationController
   end
 
   def show
-    #respond_with({ lists: [List.where(name: params[:id]).first] || render_404 })
-    respond_with({ list: List.where(name: params[:id]).first || render_404 })
+    respond_with List.where(name: params[:id]).first || render_404
   end
 end
