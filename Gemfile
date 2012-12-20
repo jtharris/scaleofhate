@@ -10,6 +10,7 @@ group :assets do
   gem 'therubyracer'
   gem 'uglifier'
 
+  gem 'less-rails'
   gem 'twitter-bootstrap-rails'
 end
 
