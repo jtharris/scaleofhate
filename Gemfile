@@ -5,6 +5,13 @@ gem 'rails', '3.2.2'
 gem 'rails-api'
 gem 'mongoid'
 
+# Authentication
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-linkedin'
+gem 'omniauth-facebook'
+gem 'omniauth-google'
+
 group :assets do
   gem 'angular-rails'
   gem 'therubyracer'

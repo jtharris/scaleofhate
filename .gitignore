@@ -1,2 +1,6 @@
 log/
 tmp/
+
+# Can't have this in version control with all
+# of its secretssss
+config/initializers/omniauth.rb
