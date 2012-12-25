@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  respond_to :json
 
   def create
     auth = auth_hash
@@ -10,6 +11,11 @@ class SessionsController < ApplicationController
 
     session[:user] = user.id
     redirect_to '/'
+  end
+
+  def show
+    render_404 unless session[:user]
+    respond_with User.find(session[:user])
   end
 
   def destroy

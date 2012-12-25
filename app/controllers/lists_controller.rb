@@ -8,6 +8,29 @@ class ListsController < ApplicationController
   end
 
   def show
-    respond_with List.where(name: params[:id]).first || render_404
+    respond_with current_list
+  end
+
+  def create
+    # TODO:  Dry this up some!
+    return head :unauthorized unless session[:user]
+
+    list_params = params[:list].merge(owner_id: session[:user])
+    respond_with List.create(list_params), status: :created
+  end
+
+  def update
+    return head :unauthorized unless session[:user]
+
+    list = current_list
+    return head :forbidden unless list.owner_id == session[:user]
+
+    respond_with list.update_attributes params[:list]
+  end
+
+  private
+
+  def current_list
+    List.where(name: params[:id]).first || render_404
   end
 end

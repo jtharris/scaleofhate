@@ -1,9 +1,9 @@
 class @ListController
-  constructor: ($scope, $http, $routeParams) ->
-    $http.get("/lists/#{ $routeParams.name }").success (list) ->
+  constructor: ($scope, $routeParams, lists) ->
+    lists.get $routeParams.name, (list) ->
       $scope.list = list
 
 class @ListsController
-  constructor: ($scope, $http) ->
-    $http.get('/lists/').success (lists) ->
-      $scope.lists = lists
+  constructor: ($scope, lists) ->
+    lists.query (l) ->
+      $scope.lists = l

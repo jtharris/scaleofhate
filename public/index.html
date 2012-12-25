@@ -16,14 +16,14 @@
             <li><a href="#">Link</a></li>
           </ul>
 
-          <div class="pull-right" ng-hide="user">
+          <div class="pull-right" ng-hide="session.user">
             <span class="navbar-text">Not logged in</span>
             <a href="/auth/developer/" class="btn">Log in</a>
           </div>
 
-          <div class="pull-right" ng-show="user">
-            <span class="navbar-text">Logged in as <strong>{{ user.name }}</strong></span>
-            <a href="#" class="btn" ng-click="logOut()">Log out</a>
+          <div class="pull-right" ng-show="session.user">
+            <span class="navbar-text">Logged in as <strong>{{ session.user.name }}</strong></span>
+            <a href="#" class="btn" ng-click="session.logOut()">Log out</a>
           </div>
         </div>
       </div>
