@@ -23,7 +23,7 @@ class ListsController < ApplicationController
     return head :unauthorized unless session[:user]
 
     list = current_list
-    return head :forbidden unless list.owner_id == session[:user]
+    return head :forbidden unless list.owner_id.to_s == session[:user].to_s
 
     respond_with list.update_attributes params[:list]
   end
@@ -31,6 +31,6 @@ class ListsController < ApplicationController
   private
 
   def current_list
-    List.where(name: params[:id]).first || render_404
+    List.find params[:id]
   end
 end
