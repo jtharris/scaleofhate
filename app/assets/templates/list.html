@@ -3,7 +3,7 @@
     <h3>{{ list.name }}</h3>
   </div>
   <ol>
-    <li ng-repeat="item in list.items">{{ item }}</li>
+    <li ng-repeat="item in list.items">{{ item.name }}</li>
   </ol>
 </div>
 
@@ -14,7 +14,7 @@
   
   <div ng-repeat="item in list.items">
     <span>{{ $index + 1 }}</span>
-    <input type="text" ng-model="item.value" />
+    <input type="text" ng-model="item.name" />
     <input type="button" ng-click="removeItem($index)" value="X" />
   </div>
 

@@ -6,5 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-List.create({name: 'foods', items: ['milk', 'mayonaise', 'figs', 'anything with some kind of white sauce', 'greens']})
-List.create({name: 'beers', items: ['pilsner', 'amber', 'porter', 'kolsch']})
+List.create({name: 'foods', items: [{name: 'milk'}, {name: 'mayonaise'}, {name:'figs'}, {name: 'anything with some kind of white sauce'}, {name: 'greens'}]})
+List.create({name: 'beers', items: [{name: 'pilsner'}, {name: 'amber'}, {name: 'porter'}, {name: 'kolsch'}]})

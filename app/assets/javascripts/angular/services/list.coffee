@@ -6,11 +6,11 @@ class @ListService
     @lists = {}
 
   get: (id, callback) =>
-    if @lists[name]
-      callback(@lists[name])
+    if @lists[id]
+      callback(@lists[id])
     else
       @http.get("/lists/#{id}/").success((list) =>
-        @lists[name] = @_unrollList(list)
+        @lists[id] = list
         callback(list)
       ).error ->
         callback null
@@ -22,19 +22,9 @@ class @ListService
       callback @lists
     else
       @http.get('/lists/').success (lists) =>
-        @lists = @_unrollList(list) for list in lists
+        @lists = lists
         callback lists
 
   update: (list, callback) =>
-    @http.put("/lists/#{list._id}/", {list: @_rollList(list)}).success (list) =>
+    @http.put("/lists/#{list._id}/", {list: list}).success (list) =>
       callback(list) if callback
-
-  _rollList: (list) ->
-    list.items = for item in list.items
-      item.value
-    list
-
-  _unrollList: (list) ->
-    list.items = for item in list.items
-      {value: item}
-    list
