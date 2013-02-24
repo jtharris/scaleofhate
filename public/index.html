@@ -12,8 +12,7 @@
           <a class="brand" href="#">Scale of Hate</a>
           <ul class="nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
+	    <li ng-show="session.user"><a href="#">Create a new Scale of Hate</a></li>
           </ul>
 
           <div class="pull-right" ng-hide="session.user">
