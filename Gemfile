@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails'
 
 gem 'rails-api'
 gem 'mongoid'
@@ -19,6 +19,7 @@ group :assets do
 
   gem 'less-rails'
   gem 'twitter-bootstrap-rails'
+  gem 'twitter-bootswatch-rails'
 end
 
 # To use ActiveModel has_secure_password
