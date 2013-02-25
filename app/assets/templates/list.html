@@ -1,23 +1,36 @@
-<div ng-hide="isOwner">
-  <div class="well">
-    <h3>{{ list.name }}</h3>
+<div ng-hide="isOwner" class="row-fluid">
+  <div class="span6 offset3">
+    <h1 class="text-center">{{ list.name }}</h1>
+    <table class="table table-bordered table-striped table-hover">
+      <tbody>
+        <tr ng-repeat="item in list.items">
+            <td><strong>{{ $index + 1}}</strong></td>
+          <td>{{ item.name }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <ol>
-    <li ng-repeat="item in list.items">{{ item.name }}</li>
-  </ol>
 </div>
 
-<div ng-show="isOwner">
-  <div class="well">
+<div ng-show="isOwner" class="row-fluid">
+  <div class="span6 offset3">
     <input type="text" ng-model="list.name" />
-  </div>
 
-  <div ng-repeat="item in list.items">
-    <span>{{ $index + 1 }}</span>
-    <input type="text" ng-model="item.name" />
-    <input type="button" ng-click="removeItem($index)" value="X" />
-  </div>
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr ng-repeat="item in list.items">
+          <td><strong>{{ $index + 1}}</strong></td>
+          <td><input type="text" ng-model="item.name" /></td>
+          <td>
+            <a href="#" class="btn btn-danger" ng-click="removeItem($index)">
+                <i class="icon-remove icon-white"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-  <input type="button" value="Save" ng-click="save()" />
-  <input type="button" value="+Add" ng-click="addItem()" />
+    <input type="button" value="Save" ng-click="save()" />
+    <input type="button" value="+Add" ng-click="addItem()" />
+  </div>
 </div>
