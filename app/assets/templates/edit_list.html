@@ -1,0 +1,28 @@
+<div ng-show="isOwner" class="row-fluid">
+  <div class="span6 offset3">
+    <div class="text-center">
+      <input class="span6 text-center" type="text" ng-model="list.name" />
+    </div>
+
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr ng-repeat="item in list.items">
+          <td><strong>{{ $index + 1}}</strong></td>
+          <td><input type="text" ng-model="item.name" /></td>
+          <td>
+            <button class="btn btn-danger" ng-click="removeItem($index)">
+              <i class="icon-remove icon-white"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <input type="button" value="Save" class="btn btn-primary" ng-click="save()" />
+    <input type="button" value="+Add" class="btn btn-success" ng-click="addItem()" />
+  </div>
+</div>
+
+<div ng-hide="isOwner">
+  <h2 class="text-center">You are not allowed to edit "{{ list.name }}"</h2>
+</div>
