@@ -5,7 +5,7 @@
     </div>
 
     <table class="table table-bordered table-striped">
-      <tbody>
+      <tbody ui-sortable ng-model="list.items">
         <tr ng-repeat="item in list.items">
           <td><strong>{{ $index + 1}}</strong></td>
           <td><input type="text" ng-model="item.name" /></td>

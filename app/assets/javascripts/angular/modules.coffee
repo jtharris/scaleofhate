@@ -1,5 +1,5 @@
 
-angular.module('scale-of-hate', []).config(['$routeProvider', '$provide', ($routeProvider, $provide) ->
+angular.module('scale-of-hate', ['ui']).config(['$routeProvider', '$provide', ($routeProvider, $provide) ->
   $routeProvider.when('/', { templateUrl: '/assets/lists.html', controller: 'ListsController' })
   $routeProvider.when('/lists/:name', { templateUrl: '/assets/list.html', controller: 'ListController' })
   $routeProvider.when('/lists/:name/edit', { templateUrl: '/assets/edit_list.html', controller: 'ListController' })

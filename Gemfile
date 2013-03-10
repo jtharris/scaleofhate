@@ -13,7 +13,10 @@ gem 'omniauth-facebook'
 gem 'omniauth-google'
 
 group :assets do
+  gem 'jquery-rails'
+  gem 'jquery-ui-rails'
   gem 'angular-rails'
+  gem 'angular-ui-rails'
   gem 'therubyracer'
   gem 'uglifier'
 

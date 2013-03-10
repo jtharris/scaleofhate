@@ -7,21 +7,23 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="navbar" ng-controller="SessionController">
+      <div class="navbar navbar-inverse" ng-controller="SessionController">
         <div class="navbar-inner">
-          <a class="brand" href="#">Scale of Hate</a>
-          <ul class="nav">
-	    <li ng-show="session.user"><a href="#">Create a new Scale of Hate</a></li>
-          </ul>
+	  <div class="container" style="width: auto;">
+            <a class="brand" href="#">Scale of Hate</a>
+            <ul class="nav">
+	      <li ng-show="session.user"><a href="#">Create</a></li>
+            </ul>
 
-          <div class="pull-right" ng-hide="session.user">
-            <span class="navbar-text">Not logged in</span>
-            <a href="/auth/developer/" class="btn">Log in</a>
-          </div>
+            <div class="pull-right" ng-hide="session.user">
+              <span class="navbar-text">Not logged in</span>
+              <a href="/auth/developer/" class="btn">Log in</a>
+            </div>
 
-          <div class="pull-right" ng-show="session.user">
-            <span class="navbar-text">Logged in as <strong>{{ session.user.name }}</strong></span>
-            <a href="#" class="btn" ng-click="session.logOut()">Log out</a>
+            <div class="pull-right" ng-show="session.user">
+              <span class="navbar-text">Logged in as <strong>{{ session.user.name }}</strong></span>
+              <a href="#" class="btn" ng-click="session.logOut()">Log out</a>
+            </div>
           </div>
         </div>
       </div>
