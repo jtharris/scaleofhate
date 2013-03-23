@@ -1,8 +1,12 @@
-<div>
-  <div>
-    <h2>Current scales of hatred</h2>
+<div class="row-fluid">
+  <div class="span6 offset3">
+    <h2 class="text-center">Recent Scales of Hate</h2>
+    <table class="table table-bordered table-striped table-hover">
+      <tbody>
+        <tr ng-repeat="list in lists">
+          <td><a ng-href="/#/lists/{{ list._id }}">{{ list.name }}</a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <ul>
-    <li ng-repeat="list in lists"><a ng-href="/#/lists/{{ list._id }}">{{ list.name }}</a></li>
-  </ul>
 </div>
